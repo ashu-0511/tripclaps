@@ -1,1 +1,203 @@
+body, html{height: 100vh; overflow:hidden; width:100%; margin:0; bottom:0;}
+svg#home-anim {
+    height: 100vh;
+}
+#home {
+  clip-path: url(#cache);
+}
+
+#red {
+  fill: none;
+  opacity: 0.15;
+  stroke: #FD2525;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; 
+}
+
+#blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #06A1C4;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #06A1C4;
+  stroke-width: 6;
+  stroke-miterlimit:10;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  animation: draw 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;    
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+ }
+    }
+
+@keyframes show {
+  0% {
+    opacity: 0.15;
+ }
+  50% {
+    opacity: 0.2;
+ }
+  100% {
+    opacity: 0.15;
+ }
+    }
+
+
+.social-icons{background:#fff; left:0; top:100px; border-radius:0 8px 8px 0; width:40px; position:fixed; padding:15px 10px 10px;  box-sizing:border-box; text-align:center; box-shadow: 0px 0px 5px rgb(0 0 0 / 20%); z-index:9;}
+.social-icons a{font-size:22px; display:block; margin-bottom:10px; color:#CE1B5F;}
+.social-icons a:hover{color:#06A1C4;}
+.social-icons a:last-child{margin-bottom:0px;}
+.animated {animation: up-down 2s ease-in-out infinite alternate-reverse both;}
+.text-highlight{
+color:#FD2525; 
+border-top:1px solid #FD2525; 
+border-bottom:1px solid #FD2525; padding:5px 20px;
+background:rgba(255,255,255,0.5); margin-bottom:10px;
+}
+
+.subscribe {
+    background: #fff;
+    display: table;
+	margin-left:auto; margin-right:auto;
+    font-family: "lato", sans-serif;
+    margin-top:10px; border:1px solid #06A1C4;
+	overflow:hidden;
+	border-radius:30px;
+}
+
+.subscribe input {
+    border: none;
+    padding: 15px 15px 15px 25px;
+    font-weight: bold;
+    outline: none;
+    font-size: 16px;
+    color: #00091B;
+    width: calc(100% - 160px);
+    position: relative;
+    top: 1px;
+	float:left;
+    background: none;
+    font-family: "lato", sans-serif;
+}
+
+.paragraph-text{
+	color: #1C1D33; font-size:24px; letter-spacing:0; font-weight:bold; margin-top:0px; display:inline-block;
+}
+
+.subscribe button {
+	float:left;
+    background: #06A1C4;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding:15px 15px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 120px;
+    position: relative;
+    left: 1px;
+    font-family: "lato", sans-serif;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+#title {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  margin-top: -60px;
+  padding-left: 10px;
+}
+#title span {
+  /*background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/ font-weight:bold;  margin-top:30px; margin-left:auto; margin-right:auto; width:auto; display:inline-block; display:table;
+}
+
+#title span a {
+    display: inline-block;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+.l-img {
+	max-width: 300px;
+	max-height: 300px;
+	position: relative;
+	display:block; margin:0 auto;
+}
+.footer{-webkit-animation: fadein-2 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein-2 1s; /* Firefox < 16 */
+        -ms-animation: fadein-2 1s; /* Internet Explorer */
+         -o-animation: fadein-2 1s; /* Opera < 12.1 */
+            animation: fadein-2 1s;
+			position:absolute; left:0; bottom:0; width:100%; z-index:3;
+			font-family: "lato", sans-serif;  background:#CE1B5F;
+			}
+.footer p{text-align:right; padding-right:12px;}
+.footer a{margin:0 12px; color:#fff; text-decoration:none; position:relative; top:0;}
+.footer a:hover{text-decoration:underline;}
+
+@media (min-width:800px){
+	svg#home-anim {
+    height: auto;
+}
+}
+@media (max-width:600px){
+	.social-icons{top:0;}
+	.subscribe{width:90%;}
+	.footer, .footer p {text-align:center;}
+	#title{padding:0 15px; font-size:34px; letter-spacing: 5px;}
+	.paragraph-text{font-size:18px; margin-top:15px;}
+}
 
